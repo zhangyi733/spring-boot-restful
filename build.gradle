@@ -24,7 +24,7 @@ allprojects {
     apply plugin: 'com.github.spotbugs'
     apply plugin: 'org.sonarqube'
 
-    group = 'com.bnc'
+    group = 'com.restful'
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
     compileJava.options.encoding = "UTF-8"
@@ -33,20 +33,20 @@ allprojects {
     repositories {
         mavenCentral()
         jcenter()
-        maven {
-            // This repository is only used for Brave New Coin artifacts. It is not required to build this project.
-            url "s3://artifact.bravenewcoin.com/maven/release"
-            content {
-                includeGroup "com.bnc"
-            }
-            credentials(AwsCredentials) {
-                accessKey "${awsAccessKeyId}"
-                secretKey "${awsSecretAccessKey}"
-                if (awsSessionToken) {
-                    sessionToken "${awsSessionToken}"
-                }
-            }
-        }
+//        maven {
+//            // This repository is only used for Brave New Coin artifacts. It is not required to build this project.
+//            url "s3://artifact.bravenewcoin.com/maven/release"
+//            content {
+//                includeGroup "com.bnc"
+//            }
+//            credentials(AwsCredentials) {
+//                accessKey "${awsAccessKeyId}"
+//                secretKey "${awsSecretAccessKey}"
+//                if (awsSessionToken) {
+//                    sessionToken "${awsSessionToken}"
+//                }
+//            }
+//        }
     }
 
     spotbugs {
@@ -81,7 +81,7 @@ allprojects {
     }
 
     dependencies {
-        implementation group: 'com.bnc', name: 'market-data-api', version: '0.0.8'
+//        implementation group: 'com.bnc', name: 'market-data-api', version: '0.0.8'
 
         testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.5.1'
         testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.13.1'

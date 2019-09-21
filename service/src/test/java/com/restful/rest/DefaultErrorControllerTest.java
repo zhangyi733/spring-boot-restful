@@ -1,4 +1,4 @@
-package com.bnc.sbjb.rest;
+package com.restful.rest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

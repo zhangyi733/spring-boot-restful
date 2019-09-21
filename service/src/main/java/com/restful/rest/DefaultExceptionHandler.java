@@ -1,4 +1,4 @@
-package com.bnc.sbjb.rest;
+package com.restful.rest;
 
 import com.bnc.api.model.error.CustomError;
 import com.bnc.api.model.error.ValidationError;

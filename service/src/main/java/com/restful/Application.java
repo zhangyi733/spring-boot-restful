@@ -1,4 +1,4 @@
-package com.bnc.sbjb;
+package com.restful;
 
 import java.util.TimeZone;
 import javax.annotation.PostConstruct;

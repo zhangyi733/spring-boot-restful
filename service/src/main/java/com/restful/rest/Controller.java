@@ -1,4 +1,4 @@
-package com.bnc.sbjb.rest;
+package com.restful.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

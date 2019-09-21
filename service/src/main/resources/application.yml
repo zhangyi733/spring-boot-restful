@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-base
+    name: springboot-resuful
   main:
     banner-mode: "off"
   profiles:
@@ -13,7 +13,7 @@ logging:
     io.micrometer.newrelic: ERROR
 
 resource:
-  path: /sbjb
+  path: /student
 
 # Actuator Settings
 management:

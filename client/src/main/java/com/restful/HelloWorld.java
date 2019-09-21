@@ -1,4 +1,4 @@
-package com.bnc.sbjb;
+package com.restful;
 
 public class HelloWorld {
 
