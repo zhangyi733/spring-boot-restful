@@ -7,6 +7,13 @@ spring:
     active: localhost
   jackson:
     default-property-inclusion: non_empty
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    generate-ddl: true
+    show-sql: true
 
 logging:
   level:
@@ -32,6 +39,35 @@ management:
     tags:
       application: ${spring.application.name}
       container: ${HOSTNAME:}${COMPUTERNAME:}
+
+---
+spring:
+  profiles: localhost
+  datasource:
+    hikari:
+      connection-timeout: 2000
+      maximum-pool-size: 5
+      schema: student
+    url: jdbc:postgresql://localhost:5432/student
+    username: postgres
+    password: password
+
+  flyway:
+    placeholders:
+      user: new_user
+      pwd:  pwd
+    username: postgres
+    password: password
+    url: jdbc:postgresql://localhost:5432/student
+    schemas:
+      - student
+  #drop n create table again, good for testing, comment this in production
+#  jpa:
+#    generate-ddl: true
+#    hibernate:
+#      ddl-auto: create-drop
+
+
 ---
 spring:
   profiles: production

@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: integration-test
+
+---
+resource:
+  path: /student
+
+spring:
+  profiles: integration-test
+  application:
+    name: Spring Restful API
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:h2:mem:asset;MODE=PostgreSQL
+  flyway:
+    enabled: false
+  main:
+    banner-mode: "off"
+
+# Actuator Settings
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,threaddump,env
+  endpoint:
+    health:
+      show-details: ALWAYS
+  metrics:
+    export:
+      newrelic:
+        enabled: false

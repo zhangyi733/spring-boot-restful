@@ -122,3 +122,8 @@ terraform plan "-var-file=master.tfvars"
 ```
 terraform plan "-var-file=master.tfvars"
 ```
+
+####Start database on local
+```
+docker run --name student -d -p 5432:5432 -e POSTGRES_PASSWORD=password -e POSTGRES_DB=student postgres:9.6-alpine
+```
